@@ -1,0 +1,25 @@
+---
+import { Icon } from 'astro-icon/components';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Alertma">
+    <div class="mt-[114px] mb-[40px] w-[70vh] text-white h-[65vh] flex flex-col justify-center items-center border border-lg rounded-lg border-gray-300">
+        <section class="border-b-gray-300 text-3xl font-bold border-b w-full h-1/5 text-center flex justify-center items-center bg-purple-400">
+            <p>Inicio Sesión</p>
+        </section>
+        <section class="w-full h-4/5 flex flex-col justify-around items-center bg-purple-400">
+            <a href="/rolA" class="hover:bg-gray-200 hover:border-gray-800 transition-all duration-700 hover:text-gray-800 text-xl font-semibold rounded-lg border-gray-300 border px-10 py-2">Paciente</a>
+            <a href="/rolB" class="hover:bg-gray-200 hover:border-gray-800 transition-all duration-700 hover:text-gray-800 text-xl font-semibold rounded-lg border-gray-300 border px-10 py-2">Médico</a>
+            <a href="/rolC" class="hover:bg-gray-200 hover:border-gray-800 transition-all duration-700 hover:text-gray-800 text-xl font-semibold rounded-lg border-gray-300 border px-10 py-2">Familiar</a>
+        </section>
+    </div>
+</Layout>
+<style>
+	body {
+		display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;}
+</style>
