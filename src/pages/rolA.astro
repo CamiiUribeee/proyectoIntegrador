@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import { Icon } from 'astro-icon/components';
 
 ---
 <Layout title="Alertma" onload="carga()">
@@ -64,9 +65,90 @@ import Layout from "../layouts/Layout.astro"
     </header>    
 </div>
 
+<body>
+    <div class="alert show">
+        <span class="warning"><Icon name="mdi:warning-circle" /></span>
+        <span class="message">Recordatorio: No olvides consultar a tu médico</span>
+        <span class="close">
+            <span class="est"><Icon name="mdi:close" /></span>
+        </span>
+
+    </div>
+</body>
+
+<style>
+    .alert{
+        background: rgb(254, 212, 219);
+        padding: 20px 40px;
+        min-width: 420px;
+        position: absolute;
+        right: 0px;
+        top: 55px;
+        border-radius: 4px;
+        border-left: 4px solid rgb(250, 74, 103); 
+        overflow: hidden;
+    }
+    .alert.show{
+        animation: show_notification 1s ease forwards;
+    }
+    @keyframes show_notification{
+        0%{
+            transform: translateX(100%);
+        }
+        40%{
+            transform: translateX(-10%);
+        }
+    }
+
+    .alert .warning{
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgb(215, 48, 76);
+        font-size: 30px;
+
+    }
+
+    .alert .message{
+        padding: 0 20px;
+        font-size: 18px;
+        color: rgb(208, 50, 76);
+
+    }
+
+    .alert .close{
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgb(254, 167, 181);
+        padding: 25px 15px;
+        cursor: pointer;
+
+    }
+    .close:hover{
+        background: rgb(254, 167, 181);
+    }
+
+    .close .est{
+        color: rgb(215, 48, 76);
+        font-size: 22px;
+        line-height: 40px;
+
+
+    }
+
+
+
+
+
+</style>
+
 <div class="grid justify-center items-center m-16">
     <img src="../../public/fondo2.jpg" alt="">
 </div>
+
 
 
 </Layout>
