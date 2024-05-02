@@ -69,7 +69,7 @@ import { Icon } from 'astro-icon/components';
     </header>    
 </div>
 
-<body>
+<!-- <body>-->
     
     <button>Novedades</button>
     <div class="alert hide">
@@ -82,6 +82,13 @@ import { Icon } from 'astro-icon/components';
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script>
+        const buttonEl = document.querySelector('.button')
+        const alertEl = document.querySelector('.alert')
+        console.log(alertEl)
+        buttonEl.addEventListener('click', function(){
+            alertEl.classList.toggle('hide')
+        })
+        /*
         $('button').click(function(){
             $('.alert').removeClass("hide");
             $('.alert').addClass("show");
@@ -92,11 +99,12 @@ import { Icon } from 'astro-icon/components';
             $('.alert').removeClass("show");
 
         });
+        */
     </script>
    
 
 
-</body>
+<!--  </body>-->
 
 <style>
     button{
