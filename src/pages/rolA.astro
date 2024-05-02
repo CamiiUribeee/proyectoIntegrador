@@ -3,7 +3,11 @@ import Layout from "../layouts/Layout.astro"
 import { Icon } from 'astro-icon/components';
 
 ---
+
+
+
 <Layout title="Alertma" onload="carga()">
+    
     <div class="bg-purple-400 h-16 flex items-center">
     <header class="flex justify-between container max-w-6xl mx-auto">
         <h1><span class="font-bold text-purple-700">Alert</span><span class="font-bold text-neutral-200">Ma</span></h1>
@@ -66,7 +70,9 @@ import { Icon } from 'astro-icon/components';
 </div>
 
 <body>
-    <div class="alert show">
+    
+    <button>Novedades</button>
+    <div class="alert hide">
         <span class="warning"><Icon name="mdi:warning-circle" /></span>
         <span class="message">Recordatorio: No olvides consultar a tu médico</span>
         <span class="close">
@@ -74,9 +80,37 @@ import { Icon } from 'astro-icon/components';
         </span>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $('button').click(function(){
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("show");
+
+        }); 
+        $('.close').click(function(){
+            $('.alert').addClass("hide");
+            $('.alert').removeClass("show");
+
+        });
+    </script>
+   
+
+
 </body>
 
 <style>
+    button{
+        padding: 8px 16px;
+        font-size: 25px;
+        background: rgb(248, 159, 174);
+        border: none; 
+        color: white;
+        font-weight: 500;
+        letter-spacing: 1px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+   
     .alert{
         background: rgb(254, 212, 219);
         padding: 20px 40px;
@@ -88,8 +122,8 @@ import { Icon } from 'astro-icon/components';
         border-left: 4px solid rgb(250, 74, 103); 
         overflow: hidden;
     }
-    .alert.show{
-        animation: show_notification 1s ease forwards;
+    .alert.hide{
+        display: none;
     }
     @keyframes show_notification{
         0%{
@@ -97,6 +131,12 @@ import { Icon } from 'astro-icon/components';
         }
         40%{
             transform: translateX(-10%);
+        }
+        80%{
+            transform: translateX(0%);
+        }
+        100%{
+            transform: translateX(-10px);
         }
     }
 
